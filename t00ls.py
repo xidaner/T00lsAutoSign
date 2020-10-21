@@ -91,4 +91,4 @@ if '__main__' == __name__:
     req = requests.session()
     res_login, formhash = login_t00ls(req)
     res_signin = signin_t00ls(req)
-    logging.warning(res_signin.content)
+    logging.warning(res_signin.json())
