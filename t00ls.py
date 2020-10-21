@@ -42,7 +42,7 @@ answer = os.environ['ANSWER']              # 问题答案
 
 
 def get_formhash(req):
-    res = req.get(url=url_login, headers=headers)
+    res = req.get(url=url_login, headers=headers, timeout=15)
     formhash_1 = re.findall('value="[0-9a-f]{8}"', res.content.decode("utf-8"))
     formhash = re.findall('[0-9a-f]{8}', formhash_1[0])[0]
     time.sleep(1)
@@ -67,12 +67,12 @@ def login_t00ls(req):
         'cookietime': '2592000'
     }
     headers['Referer'] = 'https://www.t00ls.net/'
-    res = req.post(url=url_login, headers=headers, data=data)
+    res = req.post(url=url_login, headers=headers, data=data, timeout=15)
     time.sleep(1)
     return res, formhash
 
 def get_formhash_1(req):
-    res = req.get(url=url_checklogin, headers=headers)
+    res = req.get(url=url_checklogin, headers=headers, timeout=15)
     uid = get_current_user(res.content)
     formhash = re.findall('[0-9a-f]{8}', res.content.decode("utf-8"))[0]
     return formhash, uid
@@ -84,7 +84,7 @@ def signin_t00ls(req):
         'signsubmit': 'apply'
     }
     headers['Referer'] = 'https://www.t00ls.net/members-profile-{uid}.html'.format(uid=uid)
-    res = req.post(url=url_signin, data=data, headers=headers)
+    res = req.post(url=url_signin, data=data, headers=headers, timeout=15)
     return res
 
 if '__main__' == __name__:
