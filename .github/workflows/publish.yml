@@ -1,11 +1,11 @@
-name: Github T00ls Auto Sign
+name: T00ls Auto Sign
  
 on:
     push:
         branches:
             - master
     schedule:
-        - cron: '0 12 * * *'
+        - cron: '3 * * * *'
 jobs:
     build:
         runs-on: ubuntu-latest
