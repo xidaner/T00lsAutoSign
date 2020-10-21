@@ -3,7 +3,7 @@ name: Github T00ls Auto Sign
 on:
     push:
         branches:
-            - master
+            - main
     schedule:
         - cron: '*/3 * * * *'
 jobs:
