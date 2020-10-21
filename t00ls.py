@@ -51,6 +51,7 @@ def get_formhash(req):
 def get_current_user(res):
     current_user = re.findall('<a href="members-profile-[\d+].*\.html" target="_blank">{username}</a>'.format(username=username), res.decode("utf-8"))
     cuser = re.findall('[\d+]{4,5}', ''.join(current_user))[0]
+    logging.warning(cuser)
     return cuser
 
 def login_t00ls(req):
