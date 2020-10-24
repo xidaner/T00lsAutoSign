@@ -9,7 +9,7 @@ import logging
 
 logging.basicConfig(level=logging.WARNING,
                     format='%(asctime)s - %(filename)s [line:%(lineno)d] - %(levelname)s: %(message)s')
-
+# usage:
 # logging.info('this is a loggging info message')
 # logging.debug('this is a loggging debug message')
 # logging.warning('this is loggging a warning message')
