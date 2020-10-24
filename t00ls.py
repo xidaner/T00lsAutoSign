@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import json
 import requests
 import logging
@@ -83,8 +84,10 @@ def main():
             logging.warning("今日已签到")
         else:
             logging.error("出现玄学问题了,签到失败")
+            sys.exit(1)
     else:
         logging.error("登录失败,请检查输入资料是否正确")
+        sys.exit(1)
 
 
 if __name__ == '__main__':
