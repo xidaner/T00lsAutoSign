@@ -82,7 +82,7 @@ def main():
         elif response_sign['message'] == 'alreadysign':
             logging.warning("今日已签到")
         else:
-            logging.error("出现玄学问题了 签到失败")
+            logging.error("出现玄学问题了,签到失败")
     else:
         logging.error("登录失败,请检查输入资料是否正确")
 
